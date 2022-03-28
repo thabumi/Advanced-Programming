@@ -44,8 +44,6 @@ int main() {
 	for (int i = 1; i <= n; i++) {
 		hashS[i] = (hashS[i - 1] * base + s[i]) % MOD;
 	}
-//	cout << get(1, 2) << " " << get(9, 10);
-//	return 0;
 	for (int i = 0; i < m; i++) {
 		int x, y;
 		cin >> x >> y;
@@ -60,9 +58,9 @@ int main() {
 			long long correctVal = get(x, last);
 			long long bigBase = POW[len];
 			long long unitVal = get(x, y);
-			long long checkVal = unitVal * (Pow(bigBase, mid + 1) - 1) % MOD * Pow(bigBase - 1, MOD - 2) % MOD;
+			long long checkingVal = unitVal * (Pow(bigBase, mid + 1) - 1) % MOD * Pow(bigBase - 1, MOD - 2) % MOD;
 			
-			if (correctVal == checkVal) {
+			if (correctVal == checkingVal) {
 				left = mid;
 			}
 			else {
@@ -70,7 +68,6 @@ int main() {
 			}
 		}
 		cout << left + 1 << '\n';
-//		cout << len * (left + 1) << '\n';
 	}
 	return 0;
 }
